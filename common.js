@@ -18,15 +18,16 @@ function createCircles(x, y, rad, fillColor = null) {
 }
 
 function drawCircles() {
+    let index = 0;
     for(var i = 0; i < rowDivsion+2; i++){
         for(var j = 0; j < i; j++) {
-            allPositions.push(new Positions(canvas.width/2 + (distance * (j-i)) + (distance/2 * i), distance * (i)))
+            allPositions.push(new Positions(canvas.width/2 + (distance * (j-i)) + (distance/2 * i), distance * (i), index++))
             createCircles(canvas.width/2 + (distance * (j-i)) + (distance/2 * i), distance * (i), radius);
         }
     }
     for(var k = 0; k < rowDivsion; k++) {
         for(var j = rowDivsion; j > k; j--) {
-            allPositions.push(new Positions(canvas.width/2 + (distance * (k-j)) + (distance/2 * (rowDivsion-k)), distance * (i)))
+            allPositions.push(new Positions(canvas.width/2 + (distance * (k-j)) + (distance/2 * (rowDivsion-k)), distance * (i), index++))
             createCircles(canvas.width/2 + (distance * (k-j)) + (distance/2 * (rowDivsion-k)), distance * (i), radius);
         }
         i++;

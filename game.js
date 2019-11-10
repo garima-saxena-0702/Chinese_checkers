@@ -5,10 +5,11 @@ let player = 'red';
 
 class Positions {
      
-    constructor(x, y) {
+    constructor(x, y, index) {
         this.x = x;
         this.y = y;
         this.color = null;
+        this.index = index;
     }
 }
 
